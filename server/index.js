@@ -11,9 +11,7 @@ import dalleRoutes from './routes/dalleRoutes.js'
 dotenv.config();
 
 const app = express();                                  // Calls express as a function
-app .use(cors({
-    orgin: "http://localhost:5173"
-}));                                       // use cors as middleware
+app .use(cors());                                       // use cors as middleware
 app.use(express.json({ limit: '50mb'}))                 // additional middleware
 app.use('/api/v1/post', postRoutes)
 app.use('/api/v1/dalle', dalleRoutes)
